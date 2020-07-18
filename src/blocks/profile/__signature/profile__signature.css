@@ -1,0 +1,25 @@
+.profile__signature {
+  font-weight: normal;
+  max-width: 334px;
+  font-size: 18px;
+  line-height: 22px;
+  margin: 16px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media screen and (max-width: 900px) {
+  .profile__signature {
+    font-size: 3vw;
+    line-height: 3.3vw;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .profile__signature {
+    font-size: 4.4vw;
+    line-height: 5.3vw;
+    margin: auto;
+  }
+}

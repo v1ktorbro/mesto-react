@@ -1,0 +1,8 @@
+.card__btn-like {
+  border: none;
+  background: white;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+

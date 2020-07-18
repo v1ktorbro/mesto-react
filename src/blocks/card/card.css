@@ -1,0 +1,36 @@
+@import url(./__counnt-like/card__count-like.css);
+@import url(./__btn-like/card__btn-like.css);
+@import url(./__block-like/card__block-like.css);
+@import url(./__title/card__title.css);
+@import url(./__image/card__image.css);
+@import url(./__info/card__info.css);
+@import url(./__btn-delete/card__btn-delete.css);
+
+.card {
+  background-color: #ffffff;
+  position: relative;
+  border-radius: 10px;
+  max-height: 361px;
+  width: 282px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 31px;
+}
+
+@media screen and (max-width: 650px) {
+  .card {
+    width: 240px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .card {
+    width: 311px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card {
+    width: 282px;
+  }
+}

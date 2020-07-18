@@ -1,0 +1,47 @@
+.popap__input-signature {
+	width: 358px;
+	height: 28px;
+  margin: 0 auto 48px;
+  font-size: 14px;
+	line-height: 17px;
+	border-top: 1px;
+	border-left: none;
+	border-right: none;
+}
+
+@media screen and (min-width: 1280px) {
+  .popap__input-signature {
+    margin-bottom: 34px;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .popap__input-signature {
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .popap__input-signature {
+    width: 281px;
+    min-height: 35px;
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .popap__input-signature {
+    width: 230px;
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .popap__input-signature {
+    width: 200px;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+}

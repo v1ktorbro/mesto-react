@@ -1,0 +1,37 @@
+.popap__container {
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	max-width: 430px;
+	max-height: 330px;
+	background-color: #fff;
+  border-radius: 10px;
+  z-index: 1;
+  cursor: default;
+}
+
+@media screen and (max-width: 1050px) {
+  .popap__container {
+    width: 400px;
+    height: 300px;
+    justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .popap__container {
+    width: 340px;
+    height: 250px;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .popap__container {
+    width: 262px;
+    height: 250px;
+  }
+}

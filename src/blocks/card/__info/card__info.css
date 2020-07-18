@@ -1,0 +1,25 @@
+.card__info {
+  max-width: 246px;
+  display: flex;
+  align-items: center;
+  margin-left: 21px;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 650px) {
+  .card__info {
+    max-width: 205px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .card__info {
+    max-width: 273px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card__info {
+    max-width: 245px;
+  }
+}

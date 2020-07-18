@@ -1,21 +1,30 @@
 import React from 'react'
 
 function Main () {
+  function handleEditProfileClick() {
+    document.querySelector(".popap-edit").classList.remove("popap_closed")
+  }
+  function handleEditAvatarClick() {
+    document.querySelector(".popap-avatar").classList.remove("popap_closed")
+  }
+  function handleAddPlaceClick () {
+    document.querySelector(".popap-place").classList.remove("popap_closed")
+  }
     return (
         <main className="content">
         <section className="profile">
-          <img src="../images/zhak-iv-kusto.png" alt="Аватар" className="profile__avatar" />
+          <img src="../images/zhak-iv-kusto.png" alt="Аватар" className="profile__avatar" onClick={handleEditAvatarClick} />
           <span className="profile__edit-avatar"></span>
           <div className="profile__info">
             <div className="profile__change-elem">
               <h1 className="profile__name"></h1>
-              <button className="profile__btn-edit">
+              <button className="profile__btn-edit" onClick={handleEditProfileClick}>
                 <div className="btn-image btn-image_edit"></div>
               </button>
             </div>
             <p className="profile__signature"></p>
           </div>
-          <button className="profile__btn-plus">
+          <button className="profile__btn-plus" onClick={handleAddPlaceClick}>
               <div className="btn-image btn-image_plus"></div>
           </button>
         </section>

@@ -5,11 +5,11 @@ import Main from './Main.js'
 
 function App() {
   return (
-    <body className="root">
+    <>
       <Header />
       <Main />
       <Footer />
-    </body>
+    </>
   );
 }
 

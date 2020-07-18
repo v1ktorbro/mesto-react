@@ -1,0 +1,42 @@
+@import url(./_type_error/popap__input-name_type_error.css);
+
+.popap__input-name {
+	width: 358px;
+	height: 28px;
+	margin: 0 auto 30px;
+	font-size: 14px;
+	line-height: 17px;
+	border-top: 1px;
+	border-left: none;
+	border-right: none;
+}
+
+@media screen and (min-width: 1280px) {
+  .popap__input-name {
+    margin-bottom: 35px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .popap__input-name {
+    width: 281px;
+    min-height: 35px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .popap__input-name {
+    width: 230px;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .popap__input-name {
+    width: 200px;
+  }
+}
+
+
