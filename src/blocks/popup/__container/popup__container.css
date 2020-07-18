@@ -1,4 +1,4 @@
-.popap__container {
+.popup__container {
 	position: relative;
 	left: 50%;
 	top: 50%;
@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 1050px) {
-  .popap__container {
+  .popup__container {
     width: 400px;
     height: 300px;
     justify-content: space-evenly;
@@ -22,7 +22,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .popap__container {
+  .popup__container {
     width: 340px;
     height: 250px;
     justify-content: center;
@@ -30,7 +30,7 @@
 }
 
 @media screen and (max-width: 375px) {
-  .popap__container {
+  .popup__container {
     width: 262px;
     height: 250px;
   }

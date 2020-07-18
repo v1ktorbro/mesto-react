@@ -1,4 +1,4 @@
-.popap__close {
+.popup__close {
 	position: absolute;
 	right: -63px;
 	top: -38px;
@@ -7,41 +7,41 @@
   opacity: 1;
   cursor: pointer;
 	}
-	.popap__close:hover {
+	.popup__close:hover {
 	opacity: 0.6;
 	}
-	.popap__close:before, .popap__close:after {
+	.popup__close:before, .popup__close:after {
 	position: absolute;
 	content: ' ';
 	height: 41px;
 	width: 3px;
 	background-color: #fff;
 	}
-	.popap__close:before {
+	.popup__close:before {
 	transform: rotate(45deg);
 	}
-	.popap__close:after {
+	.popup__close:after {
 	transform: rotate(-45deg);
 	}
 
 @media screen and (max-width: 1050px) {
-  .popap__close {
+  .popup__close {
     right: -50px;
 	  top: -28px;
   }
 
-  .popap__close:before, .popap__close:after {
+  .popup__close:before, .popup__close:after {
     height: 25px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .popap__close {
+  .popup__close {
     right: -45px;
 	  top: -23px;
   }
 
-  .popap__close:before, .popap__close:after {
+  .popup__close:before, .popup__close:after {
     height: 20px;
   }
 }
