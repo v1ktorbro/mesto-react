@@ -1,14 +1,15 @@
 import React from 'react'
+import PopupWithForm from './PopupWithForm.js'
 
 function Main () {
   function handleEditProfileClick() {
-    document.querySelector(".popap-edit").classList.remove("popap_closed")
+    document.querySelector(".popup-edit").classList.remove("popup_closed")
   }
   function handleEditAvatarClick() {
-    document.querySelector(".popap-avatar").classList.remove("popap_closed")
+    document.querySelector(".popup-avatar").classList.remove("popup_closed")
   }
   function handleAddPlaceClick () {
-    document.querySelector(".popap-place").classList.remove("popap_closed")
+    document.querySelector(".popup-place").classList.remove("popup_closed")
   }
     return (
         <main className="content">
@@ -48,7 +49,28 @@ function Main () {
             </div>
           </template>
        </section>
-       <section className="popap-edit popap popap_closed">
+
+        <PopupWithForm name="edit" title="Редактировать профиль" inpitSignature="Сохранить">
+          <input name="name" type="text" className="popup__input popup__input-name" id='name-input' required pattern="[A-Za-zА-Яа-я -]{2,40}" placeholder="Имя" />
+          <span className="popup__input-error" id="name-input-error"></span>
+          <input name="about" type="text" className="popup__input popup__input-signature" id='signature-input' required minLength='2' maxLength='200' placeholder="О себе" />
+          <span className="popup__input-error" id="signature-input-error"></span>
+        </PopupWithForm>
+
+        <PopupWithForm name="place" title="Новое место" inpitSignature="Создать">
+          <input name="name" type="text" className="popup__input popup__input-name" id='name-input' required pattern="[A-Za-zА-Яа-я -]{1,30}" placeholder="Название" />
+          <span className="popup__input-error" id="name-input-error"></span>
+          <input name="link" type="url" className="popup__input popup__input-signature" id='signature-input' required placeholder="Ссылка на картинку" />
+          <span className="popup__input-error" id="signature-input-error"></span>
+        </PopupWithForm>
+
+        <PopupWithForm name="avatar" title="Обновить аватар" inpitSignature="Сохранить">
+          <input name="avatar" type="url" className="popup__input popup__input-signature" id='signature-input' required placeholder="Ссылка на картинку" />
+          <span className="popup__input-error" id="signature-input-error"></span>
+        </PopupWithForm>
+
+        <PopupWithForm name="delete" title="Вы уверены?" inpitSignature="Да" />
+      {/*  <section className="popup-edit popap popap_closed">
         <form className="popap__container" noValidate>
           <span className="popap__close"></span>
           <h2 className="popap__title">Редактировать профиль</h2>
@@ -73,15 +95,15 @@ function Main () {
             <p className="popap__text-color">Создать</p>
           </button>
         </form>
-      </section>
-        <section className="popap popap-image popap_closed">
+      </section> */}
+        {/* <section className="popup popap-image popup_closed">
           <div className="popap-image__container">
             <img alt="" className="popap-image__content" />
-            <span className="popap__close"></span>
+            <span className="popup__close"></span>
             <p className="popap-image__name"></p>
           </div>
-        </section>
-      <section className="popap-delete popap popap_closed">
+        </section> */}
+      {/* <section className="popap-delete popap popap_closed">
        <form className="popap__container" noValidate>
          <span className="popap__close"></span>
          <h2 className="popap__title">Вы уверены?</h2>
@@ -100,7 +122,7 @@ function Main () {
           <p className="popap__text-color">Сохранить</p>
         </button>
       </form>
-    </section>
+    </section> */}
       </main>
     )
 }
