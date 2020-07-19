@@ -1,31 +1,23 @@
 import React from 'react'
 import PopupWithForm from './PopupWithForm.js'
+import ImagePopup from './ImagePopup.js'
 
-function Main () {
-  function handleEditProfileClick() {
-    document.querySelector(".popup-edit").classList.remove("popup_closed")
-  }
-  function handleEditAvatarClick() {
-    document.querySelector(".popup-avatar").classList.remove("popup_closed")
-  }
-  function handleAddPlaceClick () {
-    document.querySelector(".popup-place").classList.remove("popup_closed")
-  }
+function Main ({onEditProfile, onAddPlace, onEditAvatar}) {
     return (
         <main className="content">
         <section className="profile">
-          <img src="../images/zhak-iv-kusto.png" alt="Аватар" className="profile__avatar" onClick={handleEditAvatarClick} />
+          <img src="../images/zhak-iv-kusto.png" alt="Аватар" className="profile__avatar" onClick={onEditAvatar} />
           <span className="profile__edit-avatar"></span>
           <div className="profile__info">
             <div className="profile__change-elem">
               <h1 className="profile__name"></h1>
-              <button className="profile__btn-edit" onClick={handleEditProfileClick}>
+              <button className="profile__btn-edit" onClick={onEditProfile}>
                 <div className="btn-image btn-image_edit"></div>
               </button>
             </div>
             <p className="profile__signature"></p>
           </div>
-          <button className="profile__btn-plus" onClick={handleAddPlaceClick}>
+          <button className="profile__btn-plus" onClick={onAddPlace}>
               <div className="btn-image btn-image_plus"></div>
           </button>
         </section>
@@ -70,59 +62,8 @@ function Main () {
         </PopupWithForm>
 
         <PopupWithForm name="delete" title="Вы уверены?" inpitSignature="Да" />
-      {/*  <section className="popup-edit popap popap_closed">
-        <form className="popap__container" noValidate>
-          <span className="popap__close"></span>
-          <h2 className="popap__title">Редактировать профиль</h2>
-          <input name="name" type="text" className="popap__input popap__input-name" id='name-input' required pattern="[A-Za-zА-Яа-я -]{2,40}" placeholder="Имя" />
-          <span className="popap__input-error" id="name-input-error"></span>
-          <input name="about" type="text" className="popap__input popap__input-signature" id='signature-input' required minLength='2' maxLength='200' placeholder="О себе" />
-          <span className="popap__input-error" id="signature-input-error"></span>
-          <button type="submit" className="popap__input-save">
-            <p className="popap__text-color">Сохранить</p>
-          </button>
-        </form>
-       </section>
-       <section className="popap-place popap popap_closed">
-        <form className="popap__container" noValidate>
-          <span className="popap__close"></span>
-          <h2 className="popap__title">Новое место</h2>
-          <input name="name" type="text" className="popap__input popap__input-name" id='name-input' required pattern="[A-Za-zА-Яа-я -]{1,30}" placeholder="Название" />
-          <span className="popap__input-error" id="name-input-error"></span>
-          <input name="link" type="url" className="popap__input popap__input-signature" id='signature-input' required placeholder="Ссылка на картинку" />
-          <span className="popap__input-error" id="signature-input-error"></span>
-          <button type="submit" className="popap__input-save">
-            <p className="popap__text-color">Создать</p>
-          </button>
-        </form>
-      </section> */}
-        {/* <section className="popup popap-image popup_closed">
-          <div className="popap-image__container">
-            <img alt="" className="popap-image__content" />
-            <span className="popup__close"></span>
-            <p className="popap-image__name"></p>
-          </div>
-        </section> */}
-      {/* <section className="popap-delete popap popap_closed">
-       <form className="popap__container" noValidate>
-         <span className="popap__close"></span>
-         <h2 className="popap__title">Вы уверены?</h2>
-         <button type="submit" className="popap__input-save">
-           <p className="popap__text-color">Да</p>
-         </button>
-       </form>
-     </section>
-     <section className="popap-avatar popap popap_closed">
-      <form className="popap__container" noValidate>
-        <span className="popap__close"></span>
-        <h2 className="popap__title">Обновить аватар</h2>
-        <input name="avatar" type="url" className="popap__input popap__input-signature" id='signature-input' required placeholder="Ссылка на картинку" />
-        <span className="popap__input-error" id="signature-input-error"></span>
-        <button type="submit" className="popap__input-save">
-          <p className="popap__text-color">Сохранить</p>
-        </button>
-      </form>
-    </section> */}
+
+        <ImagePopup />
       </main>
     )
 }
