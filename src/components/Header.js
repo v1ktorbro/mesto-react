@@ -3,7 +3,7 @@ import React from 'react';
 function Header () {
     return (
         <header className="header">
-            <a href="#" className="header__logo"></a>
+            <a href="###" className="header__logo">logo</a>
         </header>
     )
 }
