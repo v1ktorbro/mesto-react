@@ -10,21 +10,22 @@ function Main ({
   const [userAvatar, setUserAvatar] = React.useState();
   const [cards, setCards] = React.useState([]);
   
-  React.useEffect(()=> {
-    api.getInfoUser().then(data => {
-      setUserName(data.name);
-      setUserDescription(data.about);
-      setUserAvatar(data.avatar)
+  React.useEffect(() => {
+    Promise.all([api.getInfoUser(), api.getInitialCards()])
+    .then(([userData, initialCards]) => {
+      setUserName(userData.name);
+      setUserDescription(userData.about);
+      setUserAvatar(userData.avatar);
+      setCards(initialCards.map(item => ({
+        id: item._id,
+        link: item.link,
+        name: item.name,
+        likes: item.likes.length
+      })))
     })
-    api.getInitialCards().then(initialCards => {
-        setCards(initialCards.map(item => ({
-          id: item._id,
-          link: item.link,
-          name: item.name,
-          likes: item.likes.length
-        })))
-      }) 
+    .catch(err => console.log(err))
   }, [])
+
     return (
         <main className="content">
         <section className="profile">
