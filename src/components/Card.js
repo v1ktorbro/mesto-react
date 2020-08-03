@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Card ({currentUser, card, onCardClick}) {
+function Card ({currentUser, card, onCardClick, onCardLike}) {
 
   // Определяем, являемся ли мы владельцем текущей карточки
   const isOwn = card.owner._id === currentUser._id;
@@ -31,7 +31,7 @@ function Card ({currentUser, card, onCardClick}) {
             <div className="card__info">
               <h2 className="card__title">{card.name}</h2>
               <div className="card__block-like">
-                <button className="card__btn-like">
+                <button className="card__btn-like" onClick={() => onCardLike(card)}>
                   <div className={cardLikeButtonClassName}></div>
                 </button>
                 <span className="card__count-like">{card.likes.length}</span>

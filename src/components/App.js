@@ -13,7 +13,7 @@ function App() {
 
   //информация о текущем пользователе
   const [currentUser, setCorrentUser] = React.useState({});
-  const [initialCards, setInitialCards] = React.useState([]);
+  const [cards, setCards] = React.useState([]);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
@@ -28,7 +28,7 @@ function App() {
     Promise.all([api.getInfoUser(), api.getInitialCards()])
     .then(([userData, cardsFromApi]) => {
       setCorrentUser(userData);
-      setInitialCards(cardsFromApi);
+      setCards(cardsFromApi);
     })
     .catch(err => console.log(err))
   }, [])
@@ -65,10 +65,14 @@ function App() {
   return (
     <>
       <CurrentUserContext.Provider value={currentUser}>
-      <InitialCardsContext.Provider value={initialCards}>
+      <InitialCardsContext.Provider value={cards}>
         <Header />
         <Main 
-        onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick} onEditAvatar={handleEditAvatarClick} onCardClick={handleCardClick} 
+          onEditProfile={handleEditProfileClick} 
+          onAddPlace={handleAddPlaceClick} 
+          onEditAvatar={handleEditAvatarClick} 
+          onCardClick={handleCardClick}
+          setCards={setCards} 
         />
         <PopupWithForm name="edit" title="Редактировать профиль" inputSignature="Сохранить" isOpen={isEditProfilePopupOpen} onClose={closeAllPopups}>
               <input name="name" type="text" className="popup__input popup__input-name" id='name-input'   required pattern="[A-Za-zА-Яа-я -]{2,40}" placeholder="Имя" />
