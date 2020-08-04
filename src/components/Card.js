@@ -1,6 +1,13 @@
 import React from 'react'
 
-function Card ({currentUser, card, onCardClick, onCardLike}) {
+function Card ({
+                currentUser, 
+                card, 
+                onCardClick, 
+                onCardLike,
+                onCardDelete
+              }) 
+{
 
   // Определяем, являемся ли мы владельцем текущей карточки
   const isOwn = card.owner._id === currentUser._id;
@@ -25,7 +32,7 @@ function Card ({currentUser, card, onCardClick, onCardLike}) {
     return (
         <div className="card">
             <img src={card.link} alt={`карточка с изображением ${card.name}`} className="card__image" onClick={handleClick} />
-            <button className={cardDeleteButtonClassName}>
+            <button className={cardDeleteButtonClassName} onClick={() => onCardDelete(card)}>
               <div className="btn-image btn-image_delete"></div>
             </button>
             <div className="card__info">

@@ -24,8 +24,18 @@ function Main ({
       const newCards = cards.map((currentCard) => currentCard._id === card._id ? newCard : currentCard);
       // Обновляем стейт
       setCards(newCards)
-    }) 
+    })
+    .catch(err => console.log(err)) 
   } 
+
+  function handleCardDelete(card) {
+    api.deleteCard(card._id)
+    .then(() => {
+      const newCards = cards.filter((currentCard) => currentCard._id !== card._id)
+      setCards(newCards)
+    })
+    .catch(err => console.log(err))
+  }
 
     return (
         <main className="content">
@@ -48,9 +58,10 @@ function Main ({
           <section className="cards">
             {cards.map((card) => 
               <Card key={card._id} card={card}
-              currentUser={currentUser}
-              onCardLike={handleCardLike} 
-              onCardClick={onCardClick} 
+                currentUser={currentUser}
+                onCardLike={handleCardLike} 
+                onCardDelete={handleCardDelete} 
+                onCardClick={onCardClick}
               /> 
             )}
           </section> 
