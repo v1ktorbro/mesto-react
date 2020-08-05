@@ -33,7 +33,7 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
             <input 
                 name="name" 
                 type="text" 
-                value={firstName || 'Victor Abrosimov'} 
+                defaultValue={firstName} 
                 onChange={(e) => setFirstName(e.target.value)} 
                 className="popup__input popup__input-name" 
                 id='name-input' 
@@ -44,7 +44,7 @@ function EditProfilePopup({isOpen, onClose, onUpdateUser}) {
             <input 
                 name="about" 
                 type="text" 
-                value={description || 'Student and Developer'} 
+                defaultValue={description} 
                 onChange={(e) => setDescription(e.target.value)} 
                 className="popup__input popup__input-signature" 
                 id='signature-input' 
