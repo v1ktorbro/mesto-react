@@ -6,7 +6,7 @@ import PopupWithForm from './PopupWithForm.js'
 import ImagePopup from './ImagePopup.js'
 import api from '../utils/Api.js';
 import EditProfilePopup from './EditProfilePopup.js';
-//import EditAvatarPopup from './EditAvatarPopup.js'
+import EditAvatarPopup from './EditAvatarPopup.js'
 import { CurrentUserContext } from '../contexts/CurrentUserContext.js'
 import { InitialCardsContext } from '../contexts/InitialCardsContext.js'
 
@@ -18,7 +18,7 @@ function App() {
   const [cards, setCards] = React.useState([]);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
-  //const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
   //хук для поп-ап окна при нажатии на картинку
   const [selectedCard, setSelectedCard] = React.useState({
     isOpen: false,
@@ -37,6 +37,15 @@ function App() {
 
   function handleUpdateUser(userData) {
      api.editProfile(userData)
+    .then((data) => {
+      setCurrentUser(data)
+    })
+    .catch(err => console.log(err))
+    .finally(closeAllPopups()) 
+  }
+
+  function handleUpdateAvatar(userData) {
+     api.changeAvatar(userData)
     .then((data) => {
       setCurrentUser(data)
     })
@@ -92,7 +101,7 @@ function App() {
               <input name="link" type="url" className="popup__input popup__input-signature"   id='signature-input' required placeholder="Ссылка на картинку" />
               <span className="popup__input-error" id="signature-input-error"></span>
         </PopupWithForm>
-        
+        <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar} />
         <PopupWithForm name="delete" title="Вы уверены?" inputSignature="Да" />
         <ImagePopup card={selectedCard} onClose={closeAllPopups} />
       </InitialCardsContext.Provider>
