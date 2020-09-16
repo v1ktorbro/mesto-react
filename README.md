@@ -1,13 +1,29 @@
-# [Место Russia](https://v1ktorbro.github.io/mesto/index.html)
+# [React Место Russia ](https://v1ktorbro.github.io/mesto-react/index.html)
 
-**О проеке**
+## Используемый стэк :
 
-Проект "Mesto Russia" это работа прошлого спринта, где основная цель заключалась в том, чтобы автор продемонстрировал уровень владения HTML, CSS, JavaScript. 
-Данный проект является прототипом прошлого, но написан при помощи React.
-Файловая структура проекта была создана по структуре [БЭМ Nested](https://ru.bem.info/methodology/filestructure/).
-Разработка ведется в [IDE Visual Studio Code](https://visualstudio.microsoft.com/ru/vs/).
-Чтобы протестить сервис, то Вам [сюда](https://v1ktorbro.github.io/mesto/)
+**React.js, CSS3, API fetch, БЭМ nested**
 
-**Авторы**
-* **Яндекс.Практикум** *гуру и наставник* - [Yandex.Practikum](https://praktikum.yandex.ru)
-* **Виктор Абросимов** *писарь* - [linkedin](https://www.linkedin.com/in/victor-abrosimov-631b6b1a4/)
+## О проеке
+
+Проект "React Mesto Russia" является прототипом работы "Mesto Russia", который был написан на чистом JavaScript.
+Данная работа написана на React.js с использованием хуков и ничем не отличается по функциональности от проекта ["Mesto Russia"](https://v1ktorbro.github.io/mesto/index.html), за исключением одной функциональности: в отсутствии валидации формы перед ее отправкой на сервер.
+В проекте можно изменить аватар, информацию профиля, добавить, а так же удалить собственную карточку. 
+Все запросы отправляются при помощи fetch API.
+
+### Структура проекта
+
+        blocks/     | CSS для бллоков. Проект оформлен по структуре БЭМ nested;
+        components/ | компоненты компоненты страницы;
+        contexts/   | контексты с информацией о текущем пользователе и текущими карточками;
+        fonts/      | шрифт Inter;
+        images/     | svg изображения размещенные на странице;
+        utils/      | находятся нужные переменные, которые отделены от основного кода;
+        vendor/     | normalize.css;
+        index.css   | import всех блоков в единый файл.
+
+### Авторы
+
+* **Яндекс.Практикум** *гуру и наставник* - [Yandex.Practikum](https://praktikum.yandex.ru);
+
+* **Виктор Абросимов** *писарь* - [linkedin](https://www.linkedin.com/in/victor-abrosimov-631b6b1a4/).
