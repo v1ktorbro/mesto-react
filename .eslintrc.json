@@ -27,6 +27,19 @@
       "no-console": "off",
       "arrow-body-style": ["error", "always"],
       "react/prop-types": "off",
-      "object-shorthand": "off"
+      "object-shorthand": "off",
+      "jsx-a11y/no-noninteractive-element-interactions": [
+        "error",
+        {
+          "handlers": [
+            "onClick",
+            "onMouseDown",
+            "onMouseUp",
+            "onKeyPress",
+            "onKeyDown",
+            "onKeyUp"
+          ]
+        }
+      ]
     }
 }
