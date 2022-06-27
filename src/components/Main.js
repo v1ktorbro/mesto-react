@@ -1,8 +1,6 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
 import Card from './Card';
-import { CurrentUserContext } from '../contexts/CurrentUserContext';
+import CurrentUserContext from '../contexts/CurrentUserContext';
 
 function Main({
   onEditProfile, onAddPlace, onEditAvatar, onCardClick,
@@ -13,7 +11,13 @@ function Main({
   return (
     <main className="content">
       <section className="profile">
-        <img src={currentUser.avatar} alt="Аватар" className="profile__avatar" onClick={onEditAvatar} />
+        <img
+          src={currentUser.avatar}
+          alt="Аватар"
+          className="profile__avatar"
+          onClick={onEditAvatar}
+          role="presentation"
+        />
         <span className="profile__edit-avatar" />
         <div className="profile__info">
           <div className="profile__change-elem">
@@ -24,7 +28,11 @@ function Main({
           </div>
           <p className="profile__signature">{currentUser.about}</p>
         </div>
-        <button type="button" className="profile__btn-plus" onClick={onAddPlace}>
+        <button
+          type="button"
+          className="profile__btn-plus"
+          onClick={onAddPlace}
+        >
           <div className="btn-image btn-image_plus" />
         </button>
       </section>
