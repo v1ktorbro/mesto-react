@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
 
 function Card({
@@ -30,8 +28,18 @@ function Card({
 
   return (
     <div className="card">
-      <img src={card.link} alt={`карточка с изображением ${card.name}`} className="card__image" onClick={handleClick} />
-      <button type="button" className={cardDeleteButtonClassName} onClick={() => { return onCardDelete(card); }}>
+      <img
+        src={card.link}
+        alt={`карточка с изображением ${card.name}`}
+        className="card__image"
+        onClick={handleClick}
+        role="presentation"
+      />
+      <button
+        type="button"
+        className={cardDeleteButtonClassName}
+        onClick={() => { return onCardDelete(card); }}
+      >
         <div className="btn-image btn-image_delete" />
       </button>
       <div className="card__info">

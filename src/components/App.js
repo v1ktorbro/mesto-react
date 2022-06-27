@@ -8,8 +8,8 @@ import api from '../utils/Api';
 import EditProfilePopup from './EditProfilePopup';
 import EditAvatarPopup from './EditAvatarPopup';
 import AddPlacePopup from './AddPlacePopup';
-import { CurrentUserContext } from '../contexts/CurrentUserContext';
-import { InitialCardsContext } from '../contexts/InitialCardsContext';
+import CurrentUserContext from '../contexts/CurrentUserContext';
+import InitialCardsContext from '../contexts/InitialCardsContext';
 
 function App() {
   const [currentUser, setCurrentUser] = React.useState({});
@@ -22,15 +22,6 @@ function App() {
     name: '',
     link: '',
   });
-
-  React.useEffect(() => {
-    Promise.all([api.getInfoUser(), api.getInitialCards()]).then(([userData, cardsFromApi]) => {
-      setCurrentUser(userData);
-      setCards(cardsFromApi);
-    }).catch((err) => {
-      return console.log(err);
-    });
-  }, []);
 
   function closeAllPopups() {
     setIsEditProfilePopupOpen(false);
@@ -113,6 +104,15 @@ function App() {
   function handleAddPlaceClick() {
     setIsAddPlacePopupOpen(true);
   }
+
+  React.useEffect(() => {
+    Promise.all([api.getInfoUser(), api.getInitialCards()]).then(([userData, cardsFromApi]) => {
+      setCurrentUser(userData);
+      setCards(cardsFromApi);
+    }).catch((err) => {
+      return console.log(err);
+    });
+  }, []);
 
   return (
     <>

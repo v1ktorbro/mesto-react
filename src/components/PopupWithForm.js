@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 
 function PopupWithForm({
@@ -9,7 +7,11 @@ function PopupWithForm({
   return (
     <section className={`popup-${name} popup ${!isOpen && 'popup_closed'}`}>
       <form name={name} className="popup__container" onSubmit={onSubmit} noValidate>
-        <span className="popup__close" onClick={onClose} />
+        <span
+          className="popup__close"
+          onClick={onClose}
+          role="presentation"
+        />
         <h2 className="popup__title">{title}</h2>
         {children}
         <button type="submit" className="popup__input-save">

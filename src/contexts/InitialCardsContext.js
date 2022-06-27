@@ -1,2 +1,5 @@
 import React from 'react';
-export const InitialCardsContext = React.createContext()
+
+const InitialCardsContext = React.createContext();
+
+export default InitialCardsContext;
